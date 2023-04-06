@@ -34,7 +34,30 @@
 		</nav>
 	</header>
     <main>
-    
+    	<h1>${ thePuppy.name }</h1>
+    	<h3>Breed: ${ thePuppy.breed }</h3>
+    	<h3>Owner: ${ thePuppy.owner.firstName } ${ thePuppy.owner.lastName }</h3>
+    	<c:if test="${ user_id == thePuppy.owner.id }">
+    	<form:form action="/puppy/${ thePuppy.id }/update" method="post" modelAttribute="editPuppyForm">
+    		<input type="hidden" name="_method" value="put"/>
+    		<section>
+    			<label for="name">Name your Puppy</label>
+    			<input type="text" name="name" id="" value="${ thePuppy.name }"/>
+    			<form:errors path="name" class="text-danger" />
+    		</section>
+    		<section>
+    			<label for="breed">The Puppy's Breed</label>
+    			<input type="text" name="breed" id="" value="${ thePuppy.breed }" />
+    			<form:errors path="breed" class="text-danger" />
+    		</section>
+    		<section>
+    			<input type="hidden" name="owner" value="${ user_id }" />
+    		</section>
+    		<button>Update Puppy</button>
+    	</form:form>
+    		<a href="/puppy/${ thePuppy.id }/edit">Edit Puppy Info</a>
+    		<a href="/puppy/${ thePuppy.id }/delete">Remove Puppy</a>
+    	</c:if>
     </main>
     <footer>
     

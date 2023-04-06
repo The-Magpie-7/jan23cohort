@@ -34,7 +34,24 @@
 		</nav>
 	</header>
     <main>
-    
+    <h2>Save the Puppies</h2>
+    	<form:form action="/puppy/${ thePuppy.id }/update" method="post" modelAttribute="editPuppyForm">
+    		<input type="hidden" name="_method" value="put"/>
+    		<section>
+    			<label for="name">Name your Puppy</label>
+    			<input type="text" name="name" id="" value="${ thePuppy.name }"/>
+    			<form:errors path="name" class="text-danger" />
+    		</section>
+    		<section>
+    			<label for="breed">The Puppy's Breed</label>
+    			<input type="text" name="breed" id="" value="${ thePuppy.breed }" />
+    			<form:errors path="breed" class="text-danger" />
+    		</section>
+    		<section>
+    			<input type="hidden" name="owner" value="${ user_id }" />
+    		</section>
+    		<button>Update Puppy</button>
+    	</form:form>
     </main>
     <footer>
     

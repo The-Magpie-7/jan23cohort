@@ -23,9 +23,14 @@
 		<h1>LogReg with Puppies</h1>
 		<nav>
 			<a href="/">Home</a>
-			<a href="/logReg">Login</a>
-			<a href="/addPuppy">Add Puppy</a>
-			<a href="/logout">Logout</a>
+			<c:if test="${ user_id != null }">
+				<a href="/dashboard">Dashboard</a>
+				<a href="/addPuppy">Add Puppy</a>
+				<a href="/logout">Logout</a>
+			</c:if>
+			<c:if test="${ user_id == null }">
+				<a href="/logReg">Login</a>
+			</c:if>
 		</nav>
 	</header>
     <main>
