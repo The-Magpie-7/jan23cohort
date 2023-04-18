@@ -1,0 +1,27 @@
+# Ninja Gold logic
+
+1. store gold count
+2. store activities - earned x gold or lost x gold
+3. 1 Get 1 Post method
+4. 4 Post forms all to same post request - farm, cave, house, quest
+5. After post request - redirect: same page (index) - only 1 .jsp needed
+6. reset button
+  #optional
+7. spa - looses gold only
+8. prison - new jsp only if count if Ninja falls too far into debt
+
+
+## post request functionality:
+1. way to determine which button was clicked - to know how much gold to add/remove
+2. get random number (range determined from step 1 - which button clicked)
+3. gold count stored in session - start as zero
+4. store/update activities 
+5. add random number to gold count
+
+## get request:
+1. if session.gold null = set to 0
+2. if sesion.gold !null don't change the value
+
+## reset method
+1. clear session
+

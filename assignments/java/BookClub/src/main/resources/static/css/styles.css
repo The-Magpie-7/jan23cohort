@@ -1,0 +1,25 @@
+
+.bookTitle{
+	font-style: italic;
+}
+
+.red{
+	color: red;
+}
+
+.purple{
+	color: #8000ff;
+}
+
+.green{
+	color: green;
+}
+
+.row{
+	display:inline-block;
+	margin-right: 16px;
+	
+	
+	
+	
+}
